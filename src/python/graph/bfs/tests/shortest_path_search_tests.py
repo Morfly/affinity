@@ -1,47 +1,46 @@
-import unittest
+import sys
+import pytest
 
 from shortest_path_search import shortest_path
 
 
-class ShortestPathSearchTests(unittest.TestCase):
+graph = {
+    # first subgraph
+    "ROOT": ["B", "C", "D"],
+    "B": ["E"],
+    "C": ["F", "G"],
+    "F": ["H", "I"],
 
-    graph = {
-        # first subgraph
-        "ROOT": ["B", "C", "D"],
-        "B": ["E"],
-        "C": ["F", "G"],
-        "F": ["H", "I"],
-
-        # second subgraph
-        "J": ["K", "L", "M"],
-        "L": ["N", "O"]
-    }
+    # second subgraph
+    "J": ["K", "L", "M"],
+    "L": ["N", "O"]
+}
 
 
-    def test_successful_search(self):
-        path = shortest_path(self.graph, root="ROOT", target="E")
-        self.assertEqual(path, ["ROOT", "B", "E"])
+def test_successful_search():
+    path = shortest_path(graph, root="ROOT", target="E")
+    assert path == ["ROOT", "B", "E"]
 
 
-    def test_empty_path_if_invalid_root(self):
-        path = shortest_path(self.graph, root="invalid_vertex", target="E")
-        self.assertEqual(path, [])
+def test_empty_path_if_invalid_root():
+    path = shortest_path(graph, root="invalid_vertex", target="E")
+    assert path == []
 
 
-    def test_empty_path_for_same_root_and_target(self):
-        path = shortest_path(self.graph, root="ROOT", target="ROOT")
-        self.assertEqual(path, [])
+def test_empty_path_for_same_root_and_target():
+    path = shortest_path(graph, root="ROOT", target="ROOT")
+    assert path == []
 
 
-    def test_empty_path_for_dicsonnected_vertices(self):
-        path = shortest_path(self.graph, root="ROOT", target="J")
-        self.assertEqual(path, [])
+def test_empty_path_for_dicsonnected_vertices():
+    path = shortest_path(graph, root="ROOT", target="J")
+    assert path == []
 
 
-    def test_empty_path_if_invalid_target(self):
-        path = shortest_path(self.graph, root="ROOT", target="invalid_vertex")
-        self.assertEqual(path, [])
+def test_empty_path_if_invalid_target():
+    path = shortest_path(graph, root="ROOT", target="invalid_vertex")
+    assert path == []
 
 
-if __name__ == '__main__':
-    unittest.main()
+if __name__ == "__main__":
+    sys.exit(pytest.main([__file__]))

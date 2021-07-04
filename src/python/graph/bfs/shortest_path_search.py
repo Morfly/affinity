@@ -23,7 +23,7 @@ def path_to(target, parents):
     vertex = target
     while vertex:
         path.append(vertex)
-        vertex = parents.get(vertex) or None
+        vertex = parents.get(vertex)
     
     return path[::-1] # reversed
 

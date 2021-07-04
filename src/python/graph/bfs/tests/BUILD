@@ -15,16 +15,6 @@ py_test(
     imports = ["../"],
     deps = [
         "//src/python/graph/bfs:traversal",
-    ],
-)
-
-py_test(
-    name = "traversal_pytests",
-    size = "small",
-    srcs = ["traversal_pytests.py"],
-    imports = ["../"],
-    deps = [
-        "//src/python/graph/bfs:traversal",
         requirement("pytest"),
     ],
 )
@@ -35,16 +25,6 @@ py_test(
     name = "shortest_path_search_tests",
     size = "small",
     srcs = ["shortest_path_search_tests.py"],
-    imports = ["../"],
-    deps = [
-        "//src/python/graph/bfs:search",
-    ],
-)
-
-py_test(
-    name = "shortest_path_search_pytests",
-    size = "small",
-    srcs = ["shortest_path_search_pytests.py"],
     imports = ["../"],
     deps = [
         "//src/python/graph/bfs:search",
