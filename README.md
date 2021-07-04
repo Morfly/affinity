@@ -16,20 +16,20 @@ In mathematics and computer science, an algorithm is a finite sequence of well-d
     - Dijkstra's algorithm
     - Topological sort
 
-## How to run
+## How to run?
 This repository uses [Bazel](https://bazel.build/) build system to run the code.
 
 It is recommended to use [Bazelisk](https://github.com/bazelbuild/bazelisk), a user-friendly launcher for Bazel, to build and run the code.
 
-### Install with `brew` on MacOS
+#### Install with `brew` on MacOS
 ```shell
 brew install bazelisk
 ```
-### Install with `npm`
+#### Install with `npm`
 ```shell
 npm install -g @bazel/bazelisk
 ```
-### Install with `go`
+#### Install with `go`
 ```shell
 go get github.com/bazelbuild/bazelisk
 ```
