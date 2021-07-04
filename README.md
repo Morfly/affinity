@@ -1,5 +1,5 @@
 # Affinity
-A collection of `algorithms` and `data structures` written in your favourite programming language.
+A collection of `algorithms` and `data structures` written in your favorite programming language.
 
 Available in: 
 [Java](src/java),
