@@ -22,4 +22,7 @@ jobs:
       - name: Run tests
         run: |
           CC="clang"
+          echo CC
+          export CC="clang"
+          echo CC
           bazelisk test //...
