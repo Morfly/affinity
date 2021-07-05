@@ -15,12 +15,11 @@ jobs:
     steps:
       - name: Check-out repository
         uses: actions/checkout@v2
-
-      - name: Setup CC
-        run: export CC='clang'
         
       - name: Setup Bazelisk
         uses: bazelbuild/setup-bazelisk@v1.0.1
         
       - name: Run tests
-        run: bazelisk test //...
+        run: |
+          CC="clang"
+          bazelisk test //...
