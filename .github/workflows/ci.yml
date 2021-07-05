@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Setup CC
-        run: export CC=clang
+        run: set CC=clang
         
       - name: Setup Bazelisk
         uses: bazelbuild/setup-bazelisk@v1.0.1
