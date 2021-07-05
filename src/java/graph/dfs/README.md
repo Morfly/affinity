@@ -6,7 +6,7 @@ Available in:
 [Java](../../../java/graph/dfs),
 [Kotlin](../../../kotlin/graph/dfs),
 [Python](../../../python/graph/dfs),
-[Swift]("../../../swift/graph/dfs).
+[Swift](../../../swift/graph/dfs).
 
 ## How to run?
 
