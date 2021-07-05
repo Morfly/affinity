@@ -7,14 +7,14 @@ def traverse(graph, root):
 
     explored = set()
     result = []
-    queue = deque([root])
+    stack = deque([root])
 
-    while queue:
-        vertex = queue.popleft()
+    while stack:
+        vertex = stack.pop()
         if vertex not in explored:
             explored.add(vertex)
             result.append(vertex)
-            queue += graph.get(vertex) or []
+            stack += graph.get(vertex) or []
 
     return result
 
@@ -34,7 +34,7 @@ def main():
 
     result = traverse(graph, "A")
 
-    print(result) # ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I']
+    print(result) # ['A', 'D', 'C', 'G', 'F', 'I', 'H', 'B', 'E']
 
 
 if __name__ == "__main__":

@@ -12,7 +12,7 @@ In mathematics and computer science, an algorithm is a finite sequence of well-d
 
 - **Graph**
     - [Breadth-first search](src/kotlin/graph/bfs)
-    - Depth-first search
+    - [Depth-first search](src/kotlin/graph/dfs)
     - Dijkstra's algorithm
     - Topological sort
 
@@ -34,15 +34,16 @@ npm install -g @bazel/bazelisk
 go get github.com/bazelbuild/bazelisk
 ```
 
-<br>
+Now, the boring stuff is done and the project is ready for work.
 
-### Run the code
-Now, when the environment is ready on your machine, select and run the target with the desired algorithm or data structure by using its `label`:
+
+#### Run the code
+In order to run the desired algorithm or data structure selecte the corresponding directory and the unique `label`:
 ```shell
 bazelisk run //src/kotlin/graph/bfs:traversal
 ```
 
-### Run tests
+#### Run tests
 You can run all tests for the language:
 ```shell
 bazelisk test //src/kotlin/...

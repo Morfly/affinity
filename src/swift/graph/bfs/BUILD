@@ -5,7 +5,7 @@ exports_files(
     visibility = ["__subpackages__"]
 )
 
-# ===== traverse =====
+# ===== traversal =====
 
 swift_binary(
     name = "traversal",

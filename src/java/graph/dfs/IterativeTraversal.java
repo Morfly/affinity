@@ -1,4 +1,4 @@
-package graph.bfs;
+package graph.dfs;
 
 import java.util.ArrayDeque;
 import java.util.Collection;
@@ -7,21 +7,21 @@ import java.util.List;
 import java.util.Map;
 
 
-public class Traversal {
+public class IterativeTraversal {
 
     public static <T> List<T> traverse(Map<T, List<T>> graph, T root) {
         if (!graph.containsKey(root))
             throw new IllegalArgumentException("Invalid root vertex");
 
         var explored = new LinkedHashSet<T>();
-        var queue = new ArrayDeque<T>();
-        queue.add(root);
+        var stack = new ArrayDeque<T>();
+        stack.add(root);
 
-        while (!queue.isEmpty()) {
-            var vertex = queue.removeFirst();
+        while (!stack.isEmpty()) {
+            var vertex = stack.removeLast();
             if (!explored.contains(vertex)) {
                 explored.add(vertex);
-                queue.addAll(graph.getOrDefault(vertex, List.of()));
+                stack.addAll(graph.getOrDefault(vertex, List.of()));
             }
         }
         
@@ -44,6 +44,6 @@ public class Traversal {
 
         var result = traverse(graph, "A");
 
-        System.out.println(result); // [A, B, C, D, E, F, G, H, I]
+        System.out.println(result); // [A, D, C, G, F, I, H, B, E]
     }
 }

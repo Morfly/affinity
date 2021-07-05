@@ -1,3 +1,8 @@
-/.idea
-/*bazel-*
+.vscode
+.idea
+# idea bazel plugin dirs
+.??wb
+# bazel out dirs
+*bazel-*
+
 .DS_Store

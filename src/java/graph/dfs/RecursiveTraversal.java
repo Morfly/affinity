@@ -1,31 +1,40 @@
-package graph.bfs;
+package graph.dfs;
 
 import java.util.ArrayDeque;
 import java.util.Collection;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 
-public class Traversal {
+public class RecursiveTraversal {
 
     public static <T> List<T> traverse(Map<T, List<T>> graph, T root) {
         if (!graph.containsKey(root))
             throw new IllegalArgumentException("Invalid root vertex");
 
         var explored = new LinkedHashSet<T>();
-        var queue = new ArrayDeque<T>();
-        queue.add(root);
+        
+        explore(root, graph, explored);
 
-        while (!queue.isEmpty()) {
-            var vertex = queue.removeFirst();
-            if (!explored.contains(vertex)) {
-                explored.add(vertex);
-                queue.addAll(graph.getOrDefault(vertex, List.of()));
+        // this implementation also explores disconnected subgraphs
+        for (var vertex : graph.keySet()) {
+            if (!explored.contains(explored)) {
+                explore(vertex, graph, explored);
             }
         }
-        
+
         return List.copyOf(explored);
+    }
+
+    private static <T> void explore(T vertex, Map<T, List<T>> graph, Set<T> explored) {
+        explored.add(vertex);
+        for (var successor : graph.getOrDefault(vertex, List.of())) {
+            if (!explored.contains(successor)) {
+                explore(successor, graph, explored);
+            }
+        }
     }
 
 
@@ -44,6 +53,6 @@ public class Traversal {
 
         var result = traverse(graph, "A");
 
-        System.out.println(result); // [A, B, C, D, E, F, G, H, I]
+        System.out.println(result); // [A, B, E, C, F, H, I, G, D, .., .., .., .., .., ..]
     }
 }

@@ -1,9 +1,9 @@
-package graph.bfs
+package graph.dfs
 
 
 typealias Graph<T> = Map<T, List<T>>
 
-typealias Queue<T> = ArrayDeque<T>
+typealias Stack<T> = ArrayDeque<T>
 
 
 fun <T> Graph<T>.traverse(root: T): List<T> {
@@ -11,17 +11,17 @@ fun <T> Graph<T>.traverse(root: T): List<T> {
     require(root in graph) { "Invalid root vertex '$root'" }
 
     val explored = linkedSetOf<T>()
-    val queue = Queue<T>()
-    queue += root
+    val stack = Stack<T>()
+    stack += root
 
-    while (queue.isNotEmpty()) {
-        val vertex = queue.removeFirst()
+    while (stack.isNotEmpty()) {
+        val vertex = stack.removeLast()
         if (vertex !in explored) {
             explored += vertex
-            queue += graph[vertex].orEmpty()
+            stack += graph[vertex].orEmpty()
         }
     }
-    
+
     return explored.toList()
 }
 
@@ -41,5 +41,5 @@ fun main() {
 
     val result = graph.traverse(root = "A")
 
-    println(result) // [A, B, C, D, E, F, G, H, I]
+    println(result) // [A, D, C, G, F, I, H, B, E]
 }

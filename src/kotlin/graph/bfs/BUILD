@@ -28,4 +28,3 @@ java_binary(
     main_class = "graph.bfs.ShortestPathSearchKt",
     runtime_deps = [":search_lib"],
 )
-

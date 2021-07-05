@@ -1,6 +1,6 @@
-# Breadth First Search
+# Breadth-First Search
 
-The **Breadth First Search** (`BFS`) is an algorithm for traversing or searching tree or graph data structures. It explores all the vertices at the present depth before moving on to the vertices at the next depth level.
+The **Breadth-First Search** (`BFS`) is an algorithm for traversing or searching tree or graph data structures. It explores all the vertices at the present depth before moving on to the vertices at the next depth level.
 
 Available in:
 [Java](../../../java/graph/bfs),

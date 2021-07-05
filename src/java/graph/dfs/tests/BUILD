@@ -7,11 +7,11 @@ java_test(
     srcs = glob(["*.java"]),
     main_class = "org.junit.platform.console.ConsoleLauncher",
     args = [
-        "--select-package=graph.bfs.tests",
+        "--select-package=graph.dfs.tests",
     ],
     deps = [
-        "//src/java/graph/bfs:traversal",
-        "//src/java/graph/bfs:search",
+        "//src/java/graph/dfs:traversal_recursive",
+        "//src/java/graph/dfs:traversal_iterative",
         artifact("org.junit.jupiter:junit-jupiter-api"),
         artifact("org.junit.platform:junit-platform-console"),
         artifact("org.assertj:assertj-core"),

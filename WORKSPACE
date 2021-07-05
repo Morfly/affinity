@@ -47,15 +47,18 @@ http_archive(
 
 load("@rules_jvm_external//:defs.bzl", "maven_install") 
 
+JUNIT_JUPITER_VERSION = "5.7.2"
+KOTEST_VERSION = "4.6.0"
+
 maven_install(
     artifacts = [
-        "org.junit.jupiter:junit-jupiter-api:5.7.2",
-        "org.junit.jupiter:junit-jupiter-engine:5.7.2",
-        "org.junit.jupiter:junit-jupiter-params:5.7.2",
+        "org.junit.jupiter:junit-jupiter-api:%s" % JUNIT_JUPITER_VERSION,
+        "org.junit.jupiter:junit-jupiter-engine:%s" % JUNIT_JUPITER_VERSION,
+        "org.junit.jupiter:junit-jupiter-params:%s" % JUNIT_JUPITER_VERSION,
         "org.junit.platform:junit-platform-console:1.7.2",
         "org.assertj:assertj-core:3.20.2",
-        "io.kotest:kotest-runner-junit5-jvm:4.6.0",
-        "io.kotest:kotest-assertions-core-jvm:4.6.0",
+        "io.kotest:kotest-runner-junit5-jvm:%s" % KOTEST_VERSION,
+        "io.kotest:kotest-assertions-core-jvm:%s" % KOTEST_VERSION,
     ],
     repositories = [
         "https://maven.google.com",
@@ -77,6 +80,7 @@ http_archive(
 load("@rules_python//python:pip.bzl", "pip_install")
 
 pip_install(
+    name = "pip",
     requirements = "//src/python:requirements.txt"
 )
 

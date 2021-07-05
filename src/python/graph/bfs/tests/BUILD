@@ -9,9 +9,10 @@ test_suite(
 # ===== traversal =====
 
 py_test(
-    name = "traversal_tests",
+    name = "traversal",
     size = "small",
     srcs = ["traversal_tests.py"],
+    main = "traversal_tests.py",
     imports = ["../"],
     deps = [
         "//src/python/graph/bfs:traversal",
@@ -22,9 +23,10 @@ py_test(
 # ===== shortest path search =====
 
 py_test(
-    name = "shortest_path_search_tests",
+    name = "shortest_path_search",
     size = "small",
     srcs = ["shortest_path_search_tests.py"],
+    main = "shortest_path_search_tests.py",
     imports = ["../"],
     deps = [
         "//src/python/graph/bfs:search",
