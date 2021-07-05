@@ -17,7 +17,7 @@ bazelisk run src/java/dfs:traversal_recursive
 ```
 
 ```shell
-bazelisk run src/java/dfs:search_iterative
+bazelisk run src/java/dfs:traversal_iterative
 ```
 
 ## The algorithm

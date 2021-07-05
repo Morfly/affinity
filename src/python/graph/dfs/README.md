@@ -17,7 +17,7 @@ bazelisk run src/python/dfs:traversal_recursive
 ```
 
 ```shell
-bazelisk run src/python/dfs:search_iterative
+bazelisk run src/python/dfs:traversal_iterative
 ```
 
 ## The algorithm

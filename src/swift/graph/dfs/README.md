@@ -17,7 +17,7 @@ bazelisk run src/swift/dfs:traversal_recursive
 ```
 
 ```shell
-bazelisk run src/swift/dfs:search_iterative
+bazelisk run src/swift/dfs:traversal_iterative
 ```
 
 ## The algorithm

@@ -17,7 +17,7 @@ bazelisk run src/kotlіn/dfs:traversal_recursive
 ```
 
 ```shell
-bazelisk run src/kotlіn/dfs:search_iterative
+bazelisk run src/kotlіn/dfs:traversal_iterative
 ```
 
 ## The algorithm
