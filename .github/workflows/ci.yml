@@ -36,9 +36,8 @@ jobs:
       - name: Setup Swift
         uses: fwal/setup-swift@v1
 
-      - run: export CC="clang"
-
       - name: Run Swift tests
         run: |
           echo Running Swift tests...
+          export CC="clang"
           bazelisk test //src/swift/...
