@@ -10,14 +10,35 @@ on:
 
 jobs:
   test:
+    name: Tests
     runs-on: ubuntu-latest
 
-    steps:
-      - name: Check-out repository
-        uses: actions/checkout@v2
-
+    steps:   
+      - uses: actions/checkout@v2
+        
       - name: Setup Bazelisk
         uses: bazelbuild/setup-bazelisk@v1.0.1
         
-      - name: Run tests
-        run: bazelisk test //...
+      - name: Run Kotlin tests
+        run: |
+          echo Running Kotlin tests... 
+          bazelisk test //src/kotlin/...
+        
+      - name: Run Java tests
+        run: |
+          echo Running Java tests...
+          bazelisk test //src/java/...
+
+      - name: Run Python tests
+        run: |
+          echo Running Python tests...
+          bazelisk test //src/python/...
+
+      - name: Setup Swift
+        uses: fwal/setup-swift@v1
+
+      - name: Run Swift tests
+        run: |
+          echo Running Swift tests...
+          export CC="clang"
+          bazelisk test //src/swift/...
