@@ -50,3 +50,13 @@ class ShortestPathSearchTests: XCTestCase {
         ("test_empty_path_if_invalid_target", test_empty_path_if_invalid_target),
     ]
 }
+
+
+func testMain() {
+    #if os(Linux)
+
+    XCTMain([
+        testCase(ShortestPathSearchTests.allTests)
+    ])
+    #endif
+}

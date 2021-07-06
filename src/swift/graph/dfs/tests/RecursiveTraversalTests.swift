@@ -18,7 +18,6 @@ class RecursiveTraversalTests: XCTestCase {
 
     func test_successful_traversal() {
         let result = traverse(in: graph, withRoot: "A")
-        // XCTAssertEqual(result, ["A", "B", "E", "C", "F", "H", "I", "G", "D", "J", "K", "L", "N", "O", "M"])
         XCTAssertTrue(result!.starts(with: ["A", "B", "E", "C", "F", "H", "I", "G", "D"]))
         XCTAssertEqual(result!.count, 15)
     }
@@ -33,4 +32,14 @@ class RecursiveTraversalTests: XCTestCase {
         ("test_successful_traversal", test_successful_traversal),
         ("test_nil_if_invalid_root", test_nil_if_invalid_root),
     ]
+}
+
+
+func testMain() {
+    #if os(Linux)
+
+    XCTMain([
+        testCase(RecursiveTraversalTests.allTests),
+    ])
+    #endif
 }

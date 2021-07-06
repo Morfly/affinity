@@ -35,3 +35,13 @@ class TraversalTests: XCTestCase {
         ("test_nil_if_invalid_root", test_nil_if_invalid_root),
     ]
 }
+
+
+func testMain() {
+    #if os(Linux)
+
+    XCTMain([
+        testCase(TraversalTests.allTests)
+    ])
+    #endif
+}
