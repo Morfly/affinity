@@ -17,6 +17,10 @@ bazelisk run src/java/bfs:traversal
 ```
 
 ```shell
+bazelisk run src/java/bfs:traversal_grid
+```
+
+```shell
 bazelisk run src/java/bfs:search
 ```
 

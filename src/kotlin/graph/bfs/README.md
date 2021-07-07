@@ -17,6 +17,10 @@ bazelisk run src/kotlіn/bfs:traversal
 ```
 
 ```shell
+bazelisk run src/kotlіn/bfs:traversal_grid
+```
+
+```shell
 bazelisk run src/kotlіn/bfs:search
 ```
 

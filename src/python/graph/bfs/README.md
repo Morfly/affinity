@@ -17,6 +17,10 @@ bazelisk run src/python/bfs:traversal
 ```
 
 ```shell
+bazelisk run src/python/bfs:traversal_grid
+```
+
+```shell
 bazelisk run src/python/bfs:search
 ```
 

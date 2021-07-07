@@ -17,6 +17,10 @@ bazelisk run src/swift/bfs:traversal
 ```
 
 ```shell
+bazelisk run src/swift/bfs:traversal_grid
+```
+
+```shell
 bazelisk run src/swift/bfs:search
 ```
 
