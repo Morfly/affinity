@@ -27,7 +27,7 @@ def test_successful_traversal():
 
 def test_empty_path_if_invalid_root():
     result = traverse(graph, root="invalid_vertex")
-    assert result == []
+    assert result == None
 
 
 if __name__ == "__main__":

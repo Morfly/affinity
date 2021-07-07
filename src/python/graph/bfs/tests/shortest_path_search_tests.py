@@ -24,7 +24,7 @@ def test_successful_search():
 
 def test_empty_path_if_invalid_root():
     path = shortest_path(graph, root="invalid_vertex", target="E")
-    assert path == []
+    assert path == None
 
 
 def test_empty_path_for_same_root_and_target():

@@ -10,6 +10,19 @@ java_binary(
     srcs = ["Traversal.java"],
 )
 
+# ===== traversal_grid =====
+
+java_binary(
+    name = "traversal_grid",
+    main_class = "graph.bfs.GridTraversal",
+    srcs = ["GridTraversal.java"],
+)
+
+alias(
+    name = "grid_traversal",
+    actual = "traversal_grid",
+)
+
 # ====== shortest path search =====
 
 java_binary(

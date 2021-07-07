@@ -15,6 +15,21 @@ swift_binary(
     ]
 )
 
+# ===== grid traversal =====
+
+swift_binary(
+    name = "traversal_grid",
+    srcs = [
+        "GridTraversal.swift",
+        "main.swift",
+    ]
+)
+
+alias(
+    name = "grid_traversal",
+    actual = ":traversal_grid",
+)
+
 # ===== shortest path search =====
 
 swift_binary(

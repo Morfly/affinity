@@ -3,7 +3,7 @@ from collections import deque
 
 def traverse(graph, root):
     if root not in graph:
-        return []
+        return None
 
     explored = set()
     result = []

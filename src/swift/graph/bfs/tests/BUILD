@@ -17,6 +17,18 @@ swift_test(
     ]
 )
 
+# ===== grid graversal =====
+
+swift_test(
+    name = "traversal_grid",
+    size = "small",
+    srcs = [
+        "GridTraversalTests.swift",
+        "//src/swift/graph/bfs:GridTraversal.swift",
+        "main.swift",
+    ]
+)
+
 # ===== shortest path search =====
 
 swift_test(

@@ -2,6 +2,9 @@ from collections import deque
 
 
 def shortest_path(graph, root, target):
+    if root not in graph:
+        return None
+
     parents = {}
     queue = deque([root])
 

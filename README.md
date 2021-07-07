@@ -38,7 +38,7 @@ Now, the boring stuff is done and the project is ready for work.
 
 
 #### Run the code
-In order to run the desired algorithm or data structure selecte the corresponding directory and the unique `label`:
+In order to run the desired algorithm or data structure select a corresponding directory and use the unique `label`:
 ```shell
 bazelisk run //src/kotlin/graph/bfs:traversal
 ```

@@ -16,6 +16,24 @@ java_binary(
     runtime_deps = [":traversal_lib"],
 )
 
+# ===== grid traversal =====
+
+kt_jvm_library(
+    name = "traversal_grid_lib",
+    srcs = ["GridTraversal.kt"]
+)
+
+java_binary(
+    name = "traversal_grid",
+    main_class = "graph.bfs.GridTraversalKt",
+    runtime_deps = [":traversal_grid_lib"],
+)
+
+alias(
+    name = "grid_traversal",
+    actual = ":traversal_grid"
+)
+
 # ===== shortest path search =====
 
 kt_jvm_library(

@@ -11,6 +11,7 @@ java_test(
     ],
     deps = [
         "//src/java/graph/bfs:traversal",
+        "//src/java/graph/bfs:traversal_grid",
         "//src/java/graph/bfs:search",
         artifact("org.junit.jupiter:junit-jupiter-api"),
         artifact("org.junit.platform:junit-platform-console"),

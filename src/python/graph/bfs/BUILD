@@ -10,6 +10,19 @@ py_binary(
     srcs = ["traversal.py"],
 )
 
+# ===== grid traversal =====
+
+py_binary(
+    name = "traversal_grid",
+    main = "grid_traversal.py",
+    srcs = ["grid_traversal.py"],
+)
+
+alias(
+    name = "grid_traversal",
+    actual = ":traversal_grid",
+)
+
 # ===== shortest path search =====
 
 py_binary(

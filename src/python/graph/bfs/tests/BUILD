@@ -20,6 +20,20 @@ py_test(
     ],
 )
 
+# ===== grid graversal =====
+
+py_test(
+    name = "traversal_grid",
+    size = "small",
+    srcs = ["grid_traversal_tests.py"],
+    main = "grid_traversal_tests.py",
+    imports = ["../"],
+    deps = [
+        "//src/python/graph/bfs:traversal_grid",
+        requirement("pytest"),
+    ],
+)
+
 # ===== shortest path search =====
 
 py_test(
